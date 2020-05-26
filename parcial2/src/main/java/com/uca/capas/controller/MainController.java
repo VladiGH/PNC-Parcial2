@@ -50,7 +50,7 @@ public class MainController {
 			mav.setViewName("categoria");
 		}else {
 			categoriaService.save(categoria);
-			mav.addObject("respuesta", "Categoria guardada con exito");
+			mav.addObject("respuesta", "Categoría guardada con éxito");
 			mav.setViewName("index");
 		}
 		return mav;
@@ -89,7 +89,7 @@ public class MainController {
 		}else {
 			libro.setFechaIngreso(date);
 			libroService.save(libro);
-			mav.addObject("respuesta", "Libro guardado con exito");
+			mav.addObject("respuesta", "Libro guardado con éxito");
 			mav.setViewName("index");
 		}
 		return mav;
