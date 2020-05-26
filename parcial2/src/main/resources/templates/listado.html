@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Listado de libros</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="p-3 mb-2 bg-light text-dark">
+	<table class ="table">
+		<thead class="thead-dark">
+			<th scope="col">Titulo</th>
+			<th scope="col">Autor</th>
+			<th scope="col">ISBN</th>
+			<th scope="col">Categoria</th>
+			<th scope="col">Fecha de ingreso</th>
+		</thead>
+		<th:block th:each ="libro, row: ${libros}">
+			<tr>
+				<th th:text="${libro.titulo}"/>
+				<th th:text="${libro.autor}"/>
+				<th th:text="${libro.isbn}"/>
+				<th th:text="${libro.categoria.categoria}"/>
+				<th th:text="${#dates.format(libro.fechaIngreso, 'dd/MMM/yyyy hh:mm a')}"/>
+			</tr>
+		</th:block>	
+	</table>
+</div>
+</body>
+</html>

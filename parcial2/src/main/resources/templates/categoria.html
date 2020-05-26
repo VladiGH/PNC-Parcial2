@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Categoria</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="p-3 mb-2 bg-light text-dark">
+	<div class="d-lg d-block">
+	<form th:action="@{/guardarCategoria}" th:object="${categoria}" method="post">
+			
+			<h1 class="font-weight-normal">Ingresa una categoria</h1>
+			<div class="form-group">
+			<label for="categoria">Nombre Categoria  </label>
+			<br>
+			<input th:field = "*{categoria}" class="form-control" id="nombre" type="text" placeholder="Ingresa el nombre" name="categoria" />
+			<span th:errors= "*{categoria}" style="color: #E81505"></span>
+			</div>
+		    <br>
+		    <input type="submit" class="btn btn-primary" value="Guardar" />
+	</form>
+	</div>
+</div>
+</body>
+</html>
